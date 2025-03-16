@@ -14,6 +14,12 @@ class Postresource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        $photoUrl = $this->photo
+            ? url('storage/' . $this->photo)
+            : null;
+
+        return array_merge($this->resource->toArray(), [
+            'photo_url' => $photoUrl,
+        ]);
     }
 }

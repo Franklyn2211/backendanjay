@@ -5,7 +5,7 @@
                 <img src="{{ asset('assets/images/logo.png') }}" alt="Desa Digital Logo">
             </div>
             <div class="sidebar-logo-text">
-                <div class="sidebar-logo-title">Desa Digital</div>
+                <div class="sidebar-logo-title">Desa Ambarita</div>
                 <div class="sidebar-logo-subtitle">Admin Panel</div>
             </div>
         </a>
@@ -20,7 +20,7 @@
                 </a>
             </li>
         </ul>
-        
+
         <div class="nav-section">Manajemen</div>
         <ul class="nav flex-column">
             <li class="nav-item {{ request()->is('admin/penduduk*') ? 'active' : '' }}">
@@ -30,15 +30,21 @@
                 </a>
             </li>
             <li class="nav-item {{ request()->is('admin/layanan*') ? 'active' : '' }}">
-                <a class="nav-link" href="/admin/layanan">
+                <a class="nav-link" href="{{route('admin.layanan.index')}}">
                     <i class="fas fa-hands-helping"></i>
                     <span class="nav-text">Layanan</span>
                 </a>
             </li>
             <li class="nav-item {{ request()->is('admin/berita*') ? 'active' : '' }}">
-                <a class="nav-link" href="/admin/berita">
+                <a class="nav-link" href="{{route('admin.berita.index')}}">
                     <i class="fas fa-newspaper"></i>
-                    <span class="nav-text">Berita & Pengumuman</span>
+                    <span class="nav-text">Berita</span>
+                </a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/pengumuman*') ? 'active' : '' }}">
+                <a class="nav-link" href="/admin/pengumuman">
+                    <i class="fas fa-bullhorn"></i>
+                    <span class="nav-text">Pengumuman</span>
                 </a>
             </li>
             <li class="nav-item {{ request()->is('admin/galeri*') ? 'active' : '' }}">
@@ -54,7 +60,7 @@
                 </a>
             </li>
         </ul>
-        
+
         <div class="nav-section">Master Data</div>
         <ul class="nav flex-column">
             <li class="nav-item {{ request()->is('admin/aparatur*') ? 'active' : '' }}">
@@ -76,7 +82,7 @@
                 </a>
             </li>
         </ul>
-        
+
         <div class="nav-section">Sistem</div>
         <ul class="nav flex-column">
             <li class="nav-item {{ request()->is('admin/profil*') ? 'active' : '' }}">
@@ -99,4 +105,4 @@
             </li>
         </ul>
     </div>
-</aside> 
+</aside>

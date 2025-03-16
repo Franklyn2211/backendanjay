@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Berita - Admin Desa Digital')
+@section('title', 'Pengumuman - Admin Desa Ambarita')
 
-@section('page-title', 'Berita')
+@section('page-title', 'Pengumuman')
 
 @section('content')
 <div class="container-fluid" style="padding-top: 80px;">
@@ -11,22 +11,20 @@
             <div class="card animate-on-scroll fadeIn">
                 <div class="card-header">
                     <h6 class="mb-0">@yield('page-title')</h6>
-                    <a href="{{route('admin.berita.create')}}">
                     <button class="btn btn-sm btn-soft-primary">
                         <i class="fas fa-plus me-1"></i> Tambah Berita
                     </button>
-                </a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4 mb-4">
                             <div class="card h-100">
-                                <img src="{{asset('assets/img/ambarita.jpg')}}" class="card-img-top" alt="Berita">
+                                <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Pengumuman">
                                 <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Berita</span>
-                                    <h5>Pembangunan Jembatan Selesai</h5>
-                                    <p class="text-muted small mb-2">Dipublikasikan: 22 Juni 2023</p>
-                                    <p class="mb-3">Pembangunan jembatan penghubung antar desa telah selesai dan siap digunakan oleh masyarakat...</p>
+                                    <span class="badge bg-warning mb-2">Pengumuman</span>
+                                    <h5>Jadwal Vaksinasi Covid-19</h5>
+                                    <p class="text-muted small mb-2">Dipublikasikan: 18 Juni 2023</p>
+                                    <p class="mb-3">Berikut jadwal vaksinasi Covid-19 untuk warga desa yang akan dilaksanakan pada tanggal...</p>
                                     <div class="d-flex gap-2">
                                         <a href="#" class="btn btn-sm btn-soft-primary"><i class="fas fa-edit me-1"></i> Edit</a>
                                         <a href="#" class="btn btn-sm btn-soft-danger"><i class="fas fa-trash me-1"></i> Hapus</a>
@@ -37,12 +35,12 @@
 
                         <div class="col-lg-4 mb-4">
                             <div class="card h-100">
-                                <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Berita">
+                                <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Pengumuman">
                                 <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Berita</span>
-                                    <h5>Pelatihan UMKM untuk Warga</h5>
-                                    <p class="text-muted small mb-2">Dipublikasikan: 15 Juni 2023</p>
-                                    <p class="mb-3">Desa mengadakan pelatihan UMKM untuk warga yang ingin memulai usaha kecil menengah...</p>
+                                    <span class="badge bg-warning mb-2">Pengumuman</span>
+                                    <h5>Jadwal Vaksinasi Covid-19</h5>
+                                    <p class="text-muted small mb-2">Dipublikasikan: 18 Juni 2023</p>
+                                    <p class="mb-3">Berikut jadwal vaksinasi Covid-19 untuk warga desa yang akan dilaksanakan pada tanggal...</p>
                                     <div class="d-flex gap-2">
                                         <a href="#" class="btn btn-sm btn-soft-primary"><i class="fas fa-edit me-1"></i> Edit</a>
                                         <a href="#" class="btn btn-sm btn-soft-danger"><i class="fas fa-trash me-1"></i> Hapus</a>

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\Postresource;
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        $users = User::all();
+    public function getProduct(){
+        $products = Product::all();
 
-        return Postresource::collection($users);
+        return Postresource::collection($products);
     }
 }
