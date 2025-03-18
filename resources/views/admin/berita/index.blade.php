@@ -19,49 +19,32 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
+                        @foreach ($news as $key => $item)
                         <div class="col-lg-4 mb-4">
                             <div class="card h-100">
-                                <img src="{{asset('assets/img/ambarita.jpg')}}" class="card-img-top" alt="Berita">
+                                <img src="{{asset('storage/' . $item->photo)}}" class="card-img-top" alt="{{ $item->title }}">
                                 <div class="card-body">
                                     <span class="badge bg-primary mb-2">Berita</span>
-                                    <h5>Pembangunan Jembatan Selesai</h5>
-                                    <p class="text-muted small mb-2">Dipublikasikan: 22 Juni 2023</p>
-                                    <p class="mb-3">Pembangunan jembatan penghubung antar desa telah selesai dan siap digunakan oleh masyarakat...</p>
+                                    <h5>{{ $item->title }}</h5>
+                                    <p class="text-muted small mb-2">{{ $item->created_at->format('d F Y') }}</p>
+                                    <p class="mb-3">{!! $item->description !!}</p>
                                     <div class="d-flex gap-2">
-                                        <a href="#" class="btn btn-sm btn-soft-primary"><i class="fas fa-edit me-1"></i> Edit</a>
-                                        <a href="#" class="btn btn-sm btn-soft-danger"><i class="fas fa-trash me-1"></i> Hapus</a>
+                                        <a href="{{ route('admin.berita.edit', $item->id) }}" class="btn btn-sm btn-soft-primary"><i class="fas fa-edit me-1"></i> Edit</a>
+                                        <form action="{{ route('admin.berita.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-soft-danger" onclick="return confirm('Yakin ingin menghapus?')">
+                                            <i class="fas fa-trash me-1"></i> Hapus</form>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 mb-4">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="Berita">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Berita</span>
-                                    <h5>Pelatihan UMKM untuk Warga</h5>
-                                    <p class="text-muted small mb-2">Dipublikasikan: 15 Juni 2023</p>
-                                    <p class="mb-3">Desa mengadakan pelatihan UMKM untuk warga yang ingin memulai usaha kecil menengah...</p>
-                                    <div class="d-flex gap-2">
-                                        <a href="#" class="btn btn-sm btn-soft-primary"><i class="fas fa-edit me-1"></i> Edit</a>
-                                        <a href="#" class="btn btn-sm btn-soft-danger"><i class="fas fa-trash me-1"></i> Hapus</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-
-                    <div class="d-flex justify-content-center mt-3">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled"><a class="page-link" href="#">Sebelumnya</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Selanjutnya</a></li>
-                            </ul>
-                        </nav>
+                    <div class="d-flex justify-content-end mt-3">
+                        {{ $news->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

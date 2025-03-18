@@ -45,6 +45,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     // Berita
     Route::get('/berita', [NewsController::class, 'index'])->name('admin.berita.index');
     Route::get('/berita/create', [NewsController::class, 'create'])->name('admin.berita.create');
+    Route::post('/berita', [NewsController::class, 'store'])->name('admin.berita.store');
+    Route::get('/berita/{news}/edit', [NewsController::class, 'edit'])->name('admin.berita.edit');
+    Route::put('/berita/{news}', [NewsController::class, 'update'])->name('admin.berita.update');
+    Route::delete('/berita/{news}', [NewsController::class, 'destroy'])->name('admin.berita.destroy');
 
     // Pengumuman
     Route::get('/pengumuman', function () {

@@ -14,7 +14,7 @@
                     <h6 class="mb-0">@yield('page-title')</h6>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('admin.berita.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                         <!-- Judul -->
                         <div class="mb-3">
